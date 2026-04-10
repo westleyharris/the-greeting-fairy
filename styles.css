@@ -197,13 +197,13 @@ em {
 
 /* Hero decorations */
 .hero-decor { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-.decor-star-1 { top: 12%; left: 5%; animation-delay: 0s; }
-.decor-star-2 { top: 25%; right: 8%; animation-delay: 1.5s; }
-.decor-star-3 { bottom: 18%; left: 12%; animation-delay: 3s; }
-.decor-flower-1 { top: 8%; right: 15%; animation-delay: 0.5s; }
-.decor-flower-2 { bottom: 25%; right: 5%; animation-delay: 2s; }
-.decor-balloon-1 { top: 40%; left: 3%; animation-delay: 1s; }
-.decor-balloon-2 { bottom: 10%; left: 40%; animation-delay: 4s; }
+.decor-star-1 { top: 8%; left: 5%; animation-delay: 0s; }
+.decor-star-2 { top: 15%; right: 3%; animation-delay: 1.5s; }
+.decor-star-3 { bottom: 35%; left: 2%; animation-delay: 3s; }
+.decor-flower-1 { top: 5%; right: 42%; animation-delay: 0.5s; }
+.decor-flower-2 { bottom: 40%; right: 3%; animation-delay: 2s; }
+.decor-balloon-1 { top: 30%; left: 1%; animation-delay: 1s; }
+.decor-balloon-2 { top: 10%; left: 42%; animation-delay: 4s; }
 
 /* Services decorations */
 .services-decor { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
@@ -280,7 +280,22 @@ em {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--color-text);
+  background: linear-gradient(135deg, var(--color-coral) 0%, var(--color-pink-bold) 50%, var(--color-lavender-bold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.nav-logo::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -16px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-yellow-bold);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 
 .nav-menu {
@@ -1107,7 +1122,10 @@ em {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.4rem;
-  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-lavender-bold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 12px;
 }
 
