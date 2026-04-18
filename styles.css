@@ -587,7 +587,7 @@ em {
   position: relative;
 }
 
-/* Wavy top edge */
+/* Wavy top edge — yard signs section sits above */
 .process::before {
   content: '';
   position: absolute;
@@ -595,7 +595,7 @@ em {
   left: 0;
   right: 0;
   height: 50px;
-  background: var(--color-coral);
+  background: var(--color-cream);
   clip-path: ellipse(55% 100% at 50% 0%);
   z-index: 2;
 }
@@ -922,7 +922,7 @@ em {
   position: relative;
 }
 
-/* Wavy top */
+/* Wavy top — FAQ section sits above */
 .contact::before {
   content: '';
   position: absolute;
@@ -930,7 +930,7 @@ em {
   left: 0;
   right: 0;
   height: 50px;
-  background: var(--color-peach-section);
+  background: var(--color-cream);
   clip-path: ellipse(55% 100% at 50% 0%);
   z-index: 2;
 }
@@ -1183,6 +1183,273 @@ em {
 }
 
 /* ===================================
+   SERVICE CATEGORIES (sub-grouping)
+   =================================== */
+.service-category {
+  margin-top: 48px;
+}
+
+.service-category:first-of-type {
+  margin-top: 16px;
+}
+
+.category-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--color-coral);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.category-subtitle {
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 15px;
+  max-width: 540px;
+  margin: 0 auto 36px;
+}
+
+/* Reset nth-child colors per category since they're now nested in .service-category */
+.service-category .service-card:nth-child(1) .service-img { background: var(--color-pink-light); }
+.service-category .service-card:nth-child(2) .service-img { background: var(--color-lavender); }
+.service-category .service-card:nth-child(3) .service-img { background: var(--color-sage); }
+.service-category .service-card:nth-child(4) .service-img { background: var(--color-yellow); }
+.service-category .service-card:nth-child(5) .service-img { background: var(--color-peach); }
+
+/* ===================================
+   YARD SIGNS — Cream/white section
+   =================================== */
+.yard-signs {
+  padding: var(--section-padding);
+  background: var(--color-cream);
+  position: relative;
+}
+
+/* Wavy top — sits below coral occasions */
+.yard-signs::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: var(--color-coral);
+  clip-path: ellipse(55% 100% at 50% 0%);
+  z-index: 2;
+}
+
+.yard-signs-decor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.decor-sparkle-y1 { top: 12%; right: 8%; animation-delay: 0s; fill: var(--color-coral); opacity: 0.4; }
+.decor-sparkle-y2 { bottom: 18%; left: 6%; animation-delay: 1.5s; fill: var(--color-pink-bold); opacity: 0.45; }
+.decor-flower-y1 { bottom: 10%; right: 6%; animation-delay: 0.8s; fill: var(--color-sage-bold); opacity: 0.35; }
+.decor-star-y1 { top: 18%; left: 10%; animation-delay: 2s; fill: var(--color-yellow-bold); opacity: 0.55; }
+
+.yard-signs-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.yard-signs-images {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+.yard-img {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.yard-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.yard-img-main {
+  grid-row: span 2;
+  height: 440px;
+}
+
+.yard-img-small {
+  height: 212px;
+  align-self: end;
+  background: var(--color-pink-light);
+}
+
+.yard-signs-content .section-tag {
+  text-align: left;
+}
+
+.yard-signs-content h2 {
+  margin-bottom: 20px;
+}
+
+.yard-signs-content p {
+  color: var(--color-text-light);
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.yard-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 32px;
+  display: grid;
+  gap: 12px;
+}
+
+.yard-feature-list li {
+  position: relative;
+  padding-left: 32px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.yard-feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-circle);
+  background: var(--color-pink-bold);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ===================================
+   FAQ — Cream background, accordion
+   =================================== */
+.faq {
+  padding: var(--section-padding);
+  background: var(--color-cream);
+  position: relative;
+}
+
+/* Wavy top — sits below peach about */
+.faq::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: var(--color-peach-section);
+  clip-path: ellipse(55% 100% at 50% 0%);
+  z-index: 2;
+}
+
+.faq-decor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.decor-sparkle-f1 { top: 14%; left: 6%; animation-delay: 0.4s; fill: var(--color-coral); opacity: 0.35; }
+.decor-sparkle-f2 { bottom: 22%; right: 7%; animation-delay: 1.8s; fill: var(--color-lavender-bold); opacity: 0.45; }
+.decor-flower-f1 { bottom: 8%; left: 5%; animation-delay: 1.2s; fill: var(--color-pink-bold); opacity: 0.3; }
+
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 22px 28px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: var(--color-coral);
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-pink-soft);
+  color: var(--color-coral);
+  border-radius: var(--radius-circle);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  background: var(--color-coral);
+  color: var(--color-white);
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 400px;
+  padding: 0 28px 24px;
+}
+
+.faq-answer p {
+  color: var(--color-text-light);
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ===================================
    RESPONSIVE
    =================================== */
 @media (max-width: 1024px) {
@@ -1220,13 +1487,29 @@ em {
     grid-auto-rows: 220px;
   }
 
-  .about-content {
+  .about-content,
+  .yard-signs-wrapper {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .about-text {
+  .about-text,
+  .yard-signs-content {
     text-align: center;
+  }
+
+  .yard-signs-content .section-tag {
+    text-align: center;
+  }
+
+  .yard-feature-list {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .yard-img-main {
+    height: 360px;
   }
 
   .about-text .section-tag {
@@ -1261,10 +1544,12 @@ em {
   /* Smaller wavy edges on mobile */
   .hero::after,
   .occasions::before,
+  .yard-signs::before,
   .process::before,
   .gallery::before,
   .testimonials::before,
   .about::before,
+  .faq::before,
   .contact::before,
   .footer::before {
     height: 30px;
@@ -1272,8 +1557,33 @@ em {
 
   /* Hide decorations on small screens for cleanliness */
   .hero-decor, .services-decor, .occasions-decor,
-  .gallery-decor, .testimonials-decor, .about-decor, .contact-decor {
+  .yard-signs-decor, .gallery-decor, .testimonials-decor,
+  .about-decor, .faq-decor, .contact-decor {
     display: none;
+  }
+
+  .yard-signs-images {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .yard-img-main {
+    grid-row: auto;
+    height: 320px;
+  }
+
+  .yard-img-small {
+    height: 200px;
+  }
+
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 18px 20px;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 20px 20px;
   }
 
   /* Mobile Nav */
