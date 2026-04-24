@@ -1261,15 +1261,22 @@ em {
 .yard-signs-images {
   position: relative;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  gap: 12px;
 }
 
 .yard-img {
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: var(--color-pink-light);
+}
+
+.yard-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
 }
 
 .yard-img img {
@@ -1279,16 +1286,19 @@ em {
   display: block;
 }
 
+/* Collage layout:
+   [ main  main  a   ]
+   [ main  main  b   ]
+   [ c     d     d   ]  */
 .yard-img-main {
-  grid-row: span 2;
-  height: 440px;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
 }
 
-.yard-img-small {
-  height: 212px;
-  align-self: end;
-  background: var(--color-pink-light);
-}
+.yard-img-a { grid-column: 3; grid-row: 1; }
+.yard-img-b { grid-column: 3; grid-row: 2; }
+.yard-img-c { grid-column: 1; grid-row: 3; }
+.yard-img-d { grid-column: 2 / span 2; grid-row: 3; }
 
 .yard-signs-content .section-tag {
   text-align: left;
@@ -1508,8 +1518,10 @@ em {
     margin-right: auto;
   }
 
-  .yard-img-main {
-    height: 360px;
+  .yard-signs-images {
+    max-width: 640px;
+    margin: 0 auto;
+    grid-template-rows: repeat(3, 130px);
   }
 
   .about-text .section-tag {
@@ -1562,20 +1574,24 @@ em {
     display: none;
   }
 
+  /* Mobile yard-signs: main image full-width up top, then 2x2 grid of 4 below */
   .yard-signs-images {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 140px 140px;
     max-width: 480px;
     margin: 0 auto;
+    gap: 10px;
   }
 
   .yard-img-main {
-    grid-row: auto;
-    height: 320px;
+    grid-column: 1 / span 2;
+    grid-row: 1;
   }
 
-  .yard-img-small {
-    height: 200px;
-  }
+  .yard-img-a { grid-column: 1; grid-row: 2; }
+  .yard-img-b { grid-column: 2; grid-row: 2; }
+  .yard-img-c { grid-column: 1; grid-row: 3; }
+  .yard-img-d { grid-column: 2; grid-row: 3; }
 
   .faq-question {
     font-size: 0.95rem;
