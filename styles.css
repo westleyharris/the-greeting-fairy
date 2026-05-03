@@ -273,30 +273,21 @@ em {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 96px;
 }
 
 .nav-logo {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.5rem;
-  background: linear-gradient(135deg, var(--color-coral) 0%, var(--color-pink-bold) 50%, var(--color-lavender-bold) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: flex;
+  align-items: center;
   position: relative;
 }
 
-.nav-logo::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  right: -16px;
-  width: 12px;
-  height: 12px;
-  background: var(--color-yellow-bold);
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+.nav-logo-img {
+  height: 90px;
+  width: auto;
+  display: block;
 }
+
 
 .nav-menu {
   display: flex;
